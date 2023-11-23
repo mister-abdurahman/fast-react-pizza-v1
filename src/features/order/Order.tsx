@@ -8,7 +8,6 @@ import {
 } from "../../utils/helpers";
 import OrderItem from "./OrderItem";
 import { itemType } from "../menu/menu";
-import Button from "../../UI/Button";
 import UpdateOrder from "./UpdateOrder";
 
 export interface EachOrderType {
@@ -44,23 +43,23 @@ export default function Order() {
   const estimatedMinutesLeft = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="mt-10 space-y-8">
-      <div className="flex justify-between items-center">
-        <p className="tracking-wider space-x-2 capitalize">
+    <div className="mt-10 space-y-8 sm:text-base text-sm">
+      <div className="flex justify-between items-start sm:items-center">
+        <p className="tracking-wider space-x-1 sm:space-x-2 capitalize mt-1 sm:mt-0">
           <span> Order </span> <strong>#{id}</strong> <span> status: </span>
         </p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 sm:flex-row flex-col">
           {priority && (
-            <h5 className="bg-red-500 uppercase text-sm px-4 py-2 rounded-full text-white font-semibold">
+            <h5 className="bg-red-500 uppercase text-xs sm:text-sm px-4 py-2 rounded-full text-white font-semibold self-baseline sm:items-stretch">
               Priority
             </h5>
           )}
-          <h5 className="bg-green-500 uppercase text-sm px-4 py-2 rounded-full text-white font-semibold">
+          <h5 className="bg-green-500 uppercase text-xs sm:text-sm px-4 py-2 rounded-full text-white font-semibold">
             {status === "preparing" ? "Preparing Order" : "Order is Ready"}
           </h5>
         </div>
       </div>
-      <div className="flex justify-between items-center bg-stone-200 p-5">
+      <div className="flex sm:flex-row flex-col justify-between gap-2 items-center bg-stone-200 p-5">
         {estimatedMinutesLeft > 0 ? (
           <p>
             Only{" "}

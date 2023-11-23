@@ -1,7 +1,7 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { getUsername } from "../features/user/userSlice";
 import Button from "./Button";
+import CreateUser from "../features/user/CreateUser";
 
 export default function Home() {
   const username = useSelector(getUsername);
@@ -20,16 +20,7 @@ export default function Home() {
           <span className="capitalize">{username}</span>
         </Button>
       ) : (
-        <div>
-          <p className="text-sm sm:text-base tracking-widest font-semibold">
-            👋 Welcome !, Please start by telling us your name?
-          </p>
-          <input
-            type="text"
-            placeholder="Your preferred name...?"
-            className="w-1/3 focus:w-2/5 mt-4 rounded-full px-4 py-1 transform transition-all duration-500 placeholder:text-stone-400 focus:ring focus:outline-none focus:ring-yellow-600 focus:ring-opacity-50 focus:ring-offset-2"
-          />
-        </div>
+        <CreateUser />
       )}
     </div>
   );

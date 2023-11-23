@@ -15,7 +15,7 @@ export default function SearchOrder() {
   return (
     <form action="" onSubmit={handleSubmit}>
       <input
-        className="rounded-full sm:w-64 w-36 focus:w-48 sm:focus:w-80 transform transition-all duration-500 px-4 py-2 text-sm placeholder:text-stone-400 bg-yellow-100 focus:ring focus:outline-none focus:ring-yellow-600 focus:ring-opacity-50 focus:ring-offset-2"
+        className="rounded-full sm:w-64 w-32 focus:w-36 sm:focus:w-80 transform transition-all duration-500 px-4 py-2 text-xs sm:text-sm placeholder:text-stone-400 bg-yellow-100 focus:ring focus:outline-none focus:ring-yellow-600 focus:ring-opacity-50 focus:ring-offset-2"
         placeholder="Search Order #"
         type="text"
         value={query}

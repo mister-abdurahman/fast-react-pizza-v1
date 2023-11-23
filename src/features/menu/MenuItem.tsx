@@ -1,4 +1,3 @@
-import React from "react";
 import { itemType } from "./menu";
 import { formatCurrency } from "../../utils/helpers";
 import Button from "../../UI/Button";

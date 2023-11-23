@@ -17,7 +17,7 @@ function getLatAndLong() {
   });
 }
 
-export const fetchAddress: any = createAsyncThunk(
+export const fetchAddress = createAsyncThunk(
   "user/fetchAddress",
   async function () {
     const positionObj: any = await getLatAndLong();
@@ -33,7 +33,7 @@ export const fetchAddress: any = createAsyncThunk(
 );
 
 const initialState: initialStateType = {
-  name: "AbduLLah",
+  name: "",
   status: "idle",
   address: "",
   position: {},
@@ -50,7 +50,7 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchAddress.pending, (state, action) => {
+      .addCase(fetchAddress.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchAddress.fulfilled, (state, action) => {
@@ -58,7 +58,7 @@ const userSlice = createSlice({
         state.address = action.payload.address;
         state.position = action.payload.position;
       })
-      .addCase(fetchAddress.rejected, (state, action) => {
+      .addCase(fetchAddress.rejected, (state) => {
         state.status = "error";
         state.error =
           "An error occured while fetching address, Please fill the address field !";

@@ -1,5 +1,5 @@
 import Button from "../../UI/Button";
-import { Form, useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 import { updateOrder } from "../../services/apiRestaurant";
 
 export default function UpdateOrder() {
@@ -13,6 +13,7 @@ export default function UpdateOrder() {
 }
 
 export async function action({ request, params }: any) {
+  console.log(request);
   await updateOrder(params.orderId, { priority: true });
   return null;
 }

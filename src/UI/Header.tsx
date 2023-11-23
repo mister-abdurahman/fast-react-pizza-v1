@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Username from "../features/user/Username";
 import SearchOrder from "../features/order/SearchOrder";
